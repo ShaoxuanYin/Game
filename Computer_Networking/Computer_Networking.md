@@ -104,6 +104,7 @@ dedicated slot in the revolving TDM frames.
 	
 	* Propagation delay: 包跑时间depends on the physical medium of the link (that is,  fiber optics, twisted-pair copper wire)
 	> the amount of time in **ROUTER_A** $\rightarrow 1~bit\rightarrow$ **ROUTER_B**, also a $f(physical\_space\_distance\_A\_to\_B)unction$
+	
 	* $\textcolor{red}{Difference~ between~Transmission~ \&~Propagation }$
 
 
@@ -115,6 +116,32 @@ dedicated slot in the revolving TDM frames.
 	* 设$D_0:网络空闲时延$，$D:网络当前时延$，$U:网络利用率U\in[0,1]$，假设条件下有：
 $$D=\frac{D_0}{1-U}\leftrightarrow网路当前时延\times{当前未利用率}={网络空闲时延}
 $$
+
+### 1.4.2 排队时延和丢包
+$d_{queue}$排队时延 : 不同的分组不一定相同. (depending on 流量到达速率, 链路传输速率, 流量的性质$_{周期性还是突发达到}$)
+>*  设$a:分组到达队列平均速率(pkt/s)\\R:传输速率_{队列push出比特}(bps/s)\\L:所有分组所构成的bit数,当前队列\\\rightarrow La:到达队列平均速度(bps)\\queue.size()\rightarrow+\infty\\ \textcolor{red}{则}La/R:=流量强度(traffic~intensity)$ 
+当$La/R>1_{到达比传输快}\Rightarrow队列长度\uparrow\Rightarrow排队时延\uparrow\\\textcolor{red}{流量工程设计系统的流量和强度要严格{\frac{La}{R}\le}1}$
+>* 承上, 再设流量为周期性到达, $每\frac{L}{R}秒\Leftrightarrow1分组\\N\frac{L}{R}秒\Leftrightarrow N分组, 第i个分组有(i-1)\frac{L}{R}秒排队时延$
+>计算总时延:$\Sigma(0+1+2+3+...+i-1)\times \frac{L}{R}=\frac{i(i-1)L}{2R}$画出图像是一个$O(n^2)$的
+
+Forget about what quoted above, cuz in real life it works this way: 一切过程都是随机不确定的
+
+![](./Figure_1-18.png)
+* 丢包: 分组队列overflow
+
+***
+### 1.4.3端到端时延(End-to-End delay)
+$$
+\textcolor{red}{d_{end-end}=N(d_{proc}+d_{trans}+d_{prop})}
+\\d_{proc}:delay ~at~ each~ router~ and~ at~ the~ source~ host\\d_{trans}=\frac{L_{length~of packet~size}}{R_{transmission~rate}}\\N:there's ~(N-1) ~routers \\d_{prop}:delay ~of ~propagation$$
+
+> Use `$ tracerouter <web_address>` to trace the routers alone the way.
+
+
+
+
+
+
 * 协议体系结构
 
 | OSI | TCP/IP |五层协议|
@@ -128,5 +155,7 @@ $$
 |1物理层|1网络接口层(无具体内容)|1物理层|
 
 
+
+###### 
 
 
