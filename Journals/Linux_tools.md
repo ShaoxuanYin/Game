@@ -35,7 +35,7 @@
 | GNU Octave                               |                                                      | `sudo dnf install octave`                                    |
 | NVIDIA drive                             |                                                      | `sudo dnf install akmod-nvidia`<br>and go to NVIDIA official website to download the `.run` installer |
 | cuda                                     |                                                      |                                                              |
-| texlive                                  |                                                      | `sudo dnf install texlive*`                                  |
+| texlive                                  |                                                      | `sudo dnf install *texlive*`                                  |
 | Android Studio                           |                                                      |                                                              |
 | Ubuntu Server                            |                                                      |                                                              |
 | Qv2ray                                   |                                                      | `sudo snap install qv2ray` and configure the v2ray executable path |
