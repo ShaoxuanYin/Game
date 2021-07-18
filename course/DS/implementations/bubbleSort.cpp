@@ -1,3 +1,10 @@
+/*
+ * @Author: FrankTudor
+ * @Date: 2021-07-18 17:45:57
+ * @LastEditors: FrankTudor
+ * @Description: This file is created, edited, contributed by FrankTudor
+ * @LastEditTime: 2021-07-18 17:54:41
+ */
 #include<iostream>
 
 void print(int array[],int length);
